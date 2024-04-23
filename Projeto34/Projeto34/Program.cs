@@ -17,11 +17,11 @@ namespace curso
 
             if (notaTotal > 60.0)
             {
-                Console.WriteLine("NOTA FINAL = " + notaTotal.toString("F1", CultureInfo.InvariantCulture);
+                Console.WriteLine("NOTA FINAL = " + notaTotal.toString("F1", CultureInfo.InvariantCulture));
             }
             else
             {
-                Console.WriteLine("NOTA FINAL = " + notaTotal.ToString("F1", CultureInfo.InvariantCulture);
+                Console.WriteLine("NOTA FINAL = " + notaTotal.ToString("F1", CultureInfo.InvariantCulture));
                 Console.WriteLine("REPROVADO")
             }
         }
