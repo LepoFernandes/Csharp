@@ -8,12 +8,12 @@ namespace curso
         {
             string[] notas = Console.ReadLine().Split(' ');
 
-            float n1 = float.Parse(notas[0], CultureInfo.InvariantCulture);
-            float n2 = float.Parse(notas[1], CultureInfo.InvariantCulture);
-            float n3 = float.Parse(notas[2], CultureInfo.InvariantCulture);
-            float n4 = float.Parse(notas[3], CultureInfo.InvariantCulture);
+            double n1 = double.Parse(notas[0], CultureInfo.InvariantCulture);
+            double n2 = double.Parse(notas[1], CultureInfo.InvariantCulture);
+            double n3 = double.Parse(notas[2], CultureInfo.InvariantCulture);
+            double n4 = double.Parse(notas[3], CultureInfo.InvariantCulture);
             
-            float media = ((n1 * 2) + (n2 * 3) + (n3 * 4) + (n4 * 1)) / (2 + 3 + 4 + 1);
+            double media = ((n1 * 2) + (n2 * 3) + (n3 * 4) + (n4 * 1)) / (2 + 3 + 4 + 1);
 
             if (media > 7.0)
             {
@@ -29,8 +29,8 @@ namespace curso
                 Console.WriteLine("Aluno em exame.");
             }
 
-            float exame = float.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-            float mediaFinal = (media + exame) / 2;
+            double exame = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            double mediaFinal = (media + exame) / 2;
 
             Console.WriteLine("Nota do exame: " + exame.ToString("F1", CultureInfo.InvariantCulture));
 
