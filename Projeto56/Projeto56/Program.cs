@@ -20,7 +20,7 @@ namespace curso
                 Console.WriteLine(valor += 2);
             } else
             {
-                Console.WriteLine(valor += 2);
+                Console.WriteLine(valor);
                 Console.WriteLine(valor += 2);
                 Console.WriteLine(valor += 2);
                 Console.WriteLine(valor += 2);
