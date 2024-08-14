@@ -16,7 +16,7 @@ namespace curso
             
             double P1;
 
-            P1 = (A + B + C) / 2;
+            P1 = (A + B + C) / 2.0;
 
             double area1;
 
@@ -31,7 +31,7 @@ namespace curso
 
             double P2;
 
-            P2 = (A2 + B2 + C2) / 2;
+            P2 = (A2 + B2 + C2) / 2.0;
 
             double area2;
 
