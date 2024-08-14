@@ -54,7 +54,7 @@ namespace curso
             }
 
             Console.WriteLine();
-            Console.WriteLine("Diagonal Principal:");
+            Console.Write("DIAGONAL PRINCIPAL: ");
 
             for (int i = 0; i < N; i++)
             {
