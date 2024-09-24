@@ -22,7 +22,7 @@ namespace curso
 
             double notaTotal = Exemplo.notaTotal();
 
-            if (notaTotal > 60.0) 
+            if (notaTotal >= 60.0) 
             {
                 Console.WriteLine("NOTA FINAL: " + notaTotal.ToString("F2", CultureInfo.InvariantCulture));
                 Console.WriteLine("APROVADO");
@@ -30,7 +30,7 @@ namespace curso
             }
             else
             {
-                Exemplo.RestanteNota();
+                
                 double restanteNota = Exemplo.RestanteNota();
 
                 Console.WriteLine("NOTA FINAL: " + notaTotal.ToString("F2", CultureInfo.InvariantCulture));
