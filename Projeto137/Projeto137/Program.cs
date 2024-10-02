@@ -66,6 +66,8 @@ namespace curso
 
                 Console.WriteLine(x.ToString());
 
+                Console.WriteLine();
+
 
             }
             else if (resposta == "2")
@@ -74,6 +76,7 @@ namespace curso
                 double valorSaque = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
                 x.saque(valorSaque);
 
+                Console.WriteLine();
 
                 if (valorSaque > x.Saldo) 
                 {
