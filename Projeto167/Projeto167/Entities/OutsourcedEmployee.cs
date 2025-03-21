@@ -13,7 +13,8 @@ namespace Projeto167.Entities
 
         public OutsourcedEmployee() { }
 
-        public OutsourcedEmployee(string name, int hours, double valuePerHour, double additionalCharge) : base(name, hours, valuePerHour)
+        public OutsourcedEmployee(string name, int hours, double valuePerHour, double additionalCharge) 
+            : base(name, hours, valuePerHour)
         {
             AdditionalCharge = additionalCharge;
         }
