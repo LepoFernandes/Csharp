@@ -43,6 +43,14 @@ namespace Curso
                 Console.WriteLine("Error in reservation: " + e.Message);
 
             }
+            catch (FormatException e)
+            {
+                Console.WriteLine("Format error!" + e.Message);
+            }
+            catch (Exception e) 
+            {
+                Console.WriteLine("Unexpected error: " + e.Message);
+            }
         }
     }
 }
