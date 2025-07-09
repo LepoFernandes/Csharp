@@ -46,15 +46,6 @@ namespace Curso
 
             SortedSet<int> todos = new SortedSet<int>();
 
-            static void PrinterCollection<T>(IEnumerable<T> collection)
-            {
-                foreach (T item in collection)
-                {
-                    Console.Write(item + ", ");
-                }
-                Console.WriteLine();
-            }
-
             todos.UnionWith(A);
             todos.UnionWith(B);
             todos.UnionWith(C);
@@ -62,6 +53,15 @@ namespace Curso
             PrinterCollection(todos);
             Console.WriteLine("Total students: " + todos.Count);
 
+        }
+
+        static void PrinterCollection<T>(IEnumerable<T> collection)
+        {
+            foreach (T item in collection)
+            {
+                Console.Write(item + ", ");
+            }
+            Console.WriteLine();
         }
     }
 }
