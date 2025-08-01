@@ -2,6 +2,7 @@
 using Projeto205.Entities;
 using System.Collections.Generic;
 using System.Linq;
+using System.Globalization;
 
 namespace Curso
 {
@@ -72,7 +73,7 @@ namespace Curso
 
             Console.WriteLine();
 
-            var r9 = products.Where(p => p.Id == 3).SingleOrDefault();
+            var r9 = products.Where(p => p.Id == 3).SingleOrDefault(); //Proximos exemplos sao pareciso com o de FirstOrDefault
             Console.WriteLine("SINGLE OR DEFAULT TEST 1:" + r9);
             Console.WriteLine();
 
@@ -84,6 +85,37 @@ namespace Curso
             else
             {
                 Console.WriteLine("NULL");
+            }
+
+            var r11 = products.Max(p => p.Price);
+            Console.WriteLine("Max price : " + r11.ToString("F2", CultureInfo.InvariantCulture)); //Maior preco
+
+            var r12 = products.Min(p => p.Price);
+            Console.WriteLine("Min price : " + r12.ToString("F2", CultureInfo.InvariantCulture)); //Menor preco
+
+            var r13 = products.Where(p => p.Category.Id == 1).Sum(p => p.Price);
+            Console.WriteLine("CATEGORY 1 SUM PRICES : " + r13.ToString("F2", CultureInfo.InvariantCulture));
+
+            var r14 = products.Where(p => p.Category.Id == 1).Average(p => p.Price);   //Nesse caso se a colecao estiver vazia vai dar um erro por isso a r15 tem uma forma de corrigir se for vazia fica zero
+            Console.WriteLine("CATEGORY 1 AVERAGE PRICES: " + r14.ToString("F2", CultureInfo.InvariantCulture));
+
+            var r15 = products.Where(p => p.Category.Id == 5).Select(p => p.Price).DefaultIfEmpty(0.0).Average(); // Calcula a media cuidando o possivel erro da anterior
+            Console.WriteLine("CATEGORY 5 AVERAGE PRICES: " + r15.ToString("F2", CultureInfo.InvariantCulture));
+
+            var r16 = products.Where(p => p.Category.Id == 1).Select(p => p.Price).Aggregate((x , y) => x + y);  //Criando uma operacao que eu quiser usando o aggregate nesse caso uma soma mas posso colocar qualquer operacao que quiser
+            Console.WriteLine("CATEGORY 1 AGGREGATE SUM: " + r16.ToString("F2", CultureInfo.InvariantCulture)); //Pra tratar um possivel erro caso esteja vazia faz da seguinte forma : .Aggregate(0.0, (x , y) => x + y);
+
+            Console.WriteLine();
+
+            var r17 = products.GroupBy(p => p.Category);
+            foreach ( IGrouping<Category, Product> group in r17)
+            {
+                Console.WriteLine("CATEGORY : " + group.Key.Name + " : ");
+                foreach (Product p in group)
+                {
+                    Console.WriteLine(p);
+                }
+                Console.WriteLine();
             }
         }
     }
